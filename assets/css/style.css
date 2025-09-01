@@ -1,5 +1,5 @@
 body {
-    color: #282B28;
+    background-color: #282B28;
 }
 
 h1 {
@@ -37,5 +37,15 @@ button {
     text-align: center;
     margin: 0 auto;
     padding: 15px 30px;
+    border-radius: 30px;
+}
+
+/*add hover effect to buttons?*/
+
+#sapphire {
+    width: 469px;
+    height: 295px;
+    display: block;
+    margin: 0 auto;    
     border-radius: 30px;
 }
