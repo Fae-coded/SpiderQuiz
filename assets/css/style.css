@@ -1,5 +1,10 @@
 body {
     background-color: #282B28;
+    background-image: url("../images/WebBackground3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
 }
 
 h1 {
@@ -8,6 +13,7 @@ h1 {
     font-weight: lighter;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
+    margin-top: 5px;
     margin-bottom: 0;
 }
 
@@ -24,7 +30,7 @@ p, li {
     color: #FFFFFF;
     font-size: 20px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    line-height: 2.5;
+    line-height: 2.3;
     text-align: center;
     margin: 0 0;
 }
@@ -52,10 +58,14 @@ button {
     border-radius: 30px;
 }
 
-/*add hover effect to button?*/
+/*add hover effect to button?
+button:hover {
+    background-color: ;
+
+}*/
 
 #sapphire {
-    width: 25%;
+    width: 20%;
     display: block;
     margin: 0 auto;    
     border-radius: 30px;
