@@ -5,46 +5,57 @@ body {
 h1 {
     color: #FFFFFF;
     font-size: 48px;
+    font-weight: lighter;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
+    margin-bottom: 0;
 }
 
 h2 {
     color: #FFFFFF;
     font-size: 32px;
+    font-weight: lighter;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
+    margin-bottom: 0;
 }
 
 p, li {
     color: #FFFFFF;
     font-size: 20px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    line-height: 1.5;
+    line-height: 2.5;
     text-align: center;
+    margin: 0 0;
 }
 
 ul {
     list-style-position: inside;
+    margin-top: 5px;
+}
+
+hr {
+    border: 1px solid #B5D6B2;
+    width: 80%;
 }
 
 button {
     background-color: #B5D6B2;
     color: #282B28;
-    font-size: 32px;
+    font-size: 38px;
     font-weight: bold;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
+    display: block;
     margin: 0 auto;
-    padding: 15px 30px;
+    padding: 10px 45px;
     border-radius: 30px;
 }
 
-/*add hover effect to buttons?*/
+/*add hover effect to button?*/
 
 #sapphire {
-    width: 469px;
-    height: 295px;
+    width: 25%;
     display: block;
     margin: 0 auto;    
     border-radius: 30px;
