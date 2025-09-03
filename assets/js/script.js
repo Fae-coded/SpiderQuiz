@@ -1,4 +1,6 @@
 const questionHeader = document.getElementById("questionHeader");
+const answerButtons = document.getElementById("answerButtons");
+const explanationText = document.getElementById("explanationText");
 
 let questions = [
     {question:"Which of these is NOT a type of spider?", 
@@ -38,6 +40,21 @@ let questions = [
 }
 ]
 
-let randomQuestion = Math.floor(Math.random() * questions.length);
+let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-questionHeader.innerText = questions[randomQuestion].question;
+questionHeader.innerText = randomQuestion.question;
+answerButtons.innerHTML = '';
+explanationText.innerText = '';
+
+randomQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.textContent = answer;
+    button.classList.add("answer-button")
+    answerButtons.appendChild(button); 
+})
+
+/* when answer button is clicked shows explanation. Implement checking if answer is correct first
+
+button.addEventListener("click", () => {
+        explanationText.innerText = randomQuestion.explanation;
+    });*/

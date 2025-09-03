@@ -64,6 +64,20 @@ button:hover {
 
 }*/
 
+.answer-button {
+    background-color: #B5D6B2;
+    color: #282B28;
+    font-size: 38px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 20px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    width: 25%;
+    /*buttons need centring on page*/
+}
+
 #sapphire {
     width: 20%;
     display: block;
