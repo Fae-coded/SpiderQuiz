@@ -5,7 +5,7 @@ const explanationText = document.getElementById("explanationText");
 let questions = [
     {question:"Which of these is NOT a type of spider?", 
     answers: ["Crab Spider", "Pelican Spider", "Camel Spider", "Mouse Spider"],
-    answerImages: ["assets/images/crab-spider.jpg", "assets/images/pelican-spider.jpg", "assets/images/camel-spider.jpg", "assets/images/mouse-spider.jpg"],
+    answerImages: ["./assets/images/crab-spider.jpeg", "./assets/images/pelican-spider.jpg", "./assets/images/camel-spider.jpg", "./assets/images/mouse-spider.jpg"],
     explanation: "A camel spider is an arachnid but isn’t actually a spider!"
     /*Implement clicking on images to answer*/
 },
@@ -15,7 +15,7 @@ let questions = [
 },
     {question: "What types of spiders live the longest?", 
     answers: ["Tarantulas", "Jumping Spiders", "Orb Weavers", "All of them live similar livespans"],
-    answerImages: ["assets/images/tarantula.jpg", "assets/images/jumping-spider.jpg", "assets/images/orb-weaver.jpg", "assets/images/birupes.jpg"],
+    answerImages: ["./assets/images/tarantula.jpg", "./assets/images/jumping-spider.jpg", "./assets/images/orb-weaver.jpg", "./assets/images/birupes.jpg"],
     explanation: "Some tarantula species can live up to 40 years, whereas most other types of spiders live only 2-3 years."
     /*Implement clicking on images to answer*/
 },
@@ -29,7 +29,7 @@ let questions = [
 },
     {question: "In the spider breeding hobby, what does the first stage of development colloquially get called?", 
      answers: ["Peas with Knees", "Pies with Eyes", "Eggs with Legs", "Keith with Teeth"],
-     answerImages: ["assets/images/peas.webp", "assets/images/pies.jpg", "assets/images/eggs.jpg", "assets/images/keith.jpg"],
+     answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.jpg"],
      explanation: "Eggs with legs, which then gets shortened to EWL"
      /*Implement clicking on images to answer*/
 },
@@ -49,12 +49,27 @@ questionHeader.innerText = randomQuestion.question;
 answerButtons.innerHTML = '';
 explanationText.innerText = '';
 
+if (randomQuestion.answerImages) {
+    randomQuestion.answerImages.forEach((imageSrc, index) => {
+        const button = document.createElement("button");
+        const img = document.createElement("img");
+        img.src = imageSrc;
+        img.alt = randomQuestion.answers[index];
+        img.classList.add("answer-image");
+        button.appendChild(img);
+        button.classList.add("answer-button");
+        answerButtons.appendChild(button);
+        console.log('loaded question with images');
+    });
+} else {
 randomQuestion.answers.forEach(answer => {
     const button = document.createElement("button");
     button.textContent = answer;
     button.classList.add("answer-button")
     answerButtons.appendChild(button); 
+    console.log('loaded question');
 })
+}
 
 /* when answer button is clicked shows explanation. Implement checking if answer is correct first
 
