@@ -9,36 +9,44 @@ let questions = [
     {question:"Which of these is NOT a type of spider?", 
     answers: ["Crab Spider", "Pelican Spider", "Camel Spider", "Mouse Spider"],
     answerImages: ["./assets/images/crab-spider.jpeg", "./assets/images/pelican-spider.jpg", "./assets/images/camel-spider.jpg", "./assets/images/mouse-spider.jpg"],
+    correctAnswer: "Camel Spider",
     explanation: "A camel spider is an arachnid but isn’t actually a spider!"
 },
     {question:"How do spiders move their legs?",
     answers: ["Purely muscles", "Muscles and hydraulics", "Pneumatics and muscles", "The power of God and anime"],
+    correctAnswer: "Muscles and hydraulics",
     explanation: "They pump their version of blood (hemolymph) around their body to build up pressure in their legs."
 },
     {question: "What types of spiders live the longest?", 
     answers: ["Tarantulas", "Jumping Spiders", "Orb Weavers", "All of them live similar livespans"],
     answerImages: ["./assets/images/tarantula.jpg", "./assets/images/jumping-spider.jpg", "./assets/images/orb-weaver.jpg", "./assets/images/birupes.jpg"],
+    correctAnswer: "Tarantulas",
     explanation: "Some tarantula species can live up to 40 years, whereas most other types of spiders live only 2-3 years."
 },
     {question: "There is a herbivorous species of spider.", 
     answers: ["True", "False"],
+    correctAnswer: "True",
     explanation: "True! The species Bagheera kiplingi feeds primarily on the ‘beltian bodies’ (little nubs at the end of leaves) of Mimosoideae trees. It’s incorrect to call them exclusively vegetarian though, even though these nubs make up over 90% of their food, they will occasionally eat ant larvae."
 },
     {question: "How many body segments do spiders have?", 
     answers: ["1", "2", "3", "4"],
+    correctAnswer: "2",
     explanation: "The body of a spider has 2 segments, the abdomen and the cephalothorax"
 },
     {question: "In the spider breeding hobby, what does the first stage of development colloquially get called?", 
      answers: ["Peas with Knees", "Pies with Eyes", "Eggs with Legs", "Keith with Teeth"],
      answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.webp"],
+     correctAnswer: "Eggs with Legs",
      explanation: "Eggs with legs, which then gets shortened to EWL"
 },
     {question: "Why are spiders so important to our way of life?", 
      answers: ["They kill millions of mosquitoes and similar insects each year, which helps slow the spread of diseases", "They help protect crops against insects that want to eat them", "Their webs have many scientific applications", "Their cute little faces brighten our days", "All of the above" ],
+     correctAnswer: "All of the above",
      explanation: "All of the above!"
 },
     {question: "Arguably one of the most venomous spiders in the world, the six eyed sand spider (Sicarius thomisoides) is responsible for how many deaths in the last 10 years?", 
     answers: ["0", "356", "33", "10,048"],
+    correctAnswer: "0",
     explanation: "There are no recorded instances of this spider biting people. They are incredibly reluctant to bite anything that is not their prey and instead rely on their incredible camouflage of covering themselves with sand."
 }
 ]
@@ -86,5 +94,4 @@ button.addEventListener("click", () => {
 const nextButton = document.getElementById("nextButton");
 nextButton.addEventListener("click", () => {
     location.reload();
-    
 });
