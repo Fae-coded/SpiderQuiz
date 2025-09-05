@@ -1,13 +1,15 @@
+//Populates a random question and answers on page load
 const questionHeader = document.getElementById("questionHeader");
 const answerButtons = document.getElementById("answerButtons");
 const explanationText = document.getElementById("explanationText");
 
+
+//Array of question objects
 let questions = [
     {question:"Which of these is NOT a type of spider?", 
     answers: ["Crab Spider", "Pelican Spider", "Camel Spider", "Mouse Spider"],
     answerImages: ["./assets/images/crab-spider.jpeg", "./assets/images/pelican-spider.jpg", "./assets/images/camel-spider.jpg", "./assets/images/mouse-spider.jpg"],
     explanation: "A camel spider is an arachnid but isn’t actually a spider!"
-    /*Implement clicking on images to answer*/
 },
     {question:"How do spiders move their legs?",
     answers: ["Purely muscles", "Muscles and hydraulics", "Pneumatics and muscles", "The power of God and anime"],
@@ -17,7 +19,6 @@ let questions = [
     answers: ["Tarantulas", "Jumping Spiders", "Orb Weavers", "All of them live similar livespans"],
     answerImages: ["./assets/images/tarantula.jpg", "./assets/images/jumping-spider.jpg", "./assets/images/orb-weaver.jpg", "./assets/images/birupes.jpg"],
     explanation: "Some tarantula species can live up to 40 years, whereas most other types of spiders live only 2-3 years."
-    /*Implement clicking on images to answer*/
 },
     {question: "There is a herbivorous species of spider.", 
     answers: ["True", "False"],
@@ -29,9 +30,8 @@ let questions = [
 },
     {question: "In the spider breeding hobby, what does the first stage of development colloquially get called?", 
      answers: ["Peas with Knees", "Pies with Eyes", "Eggs with Legs", "Keith with Teeth"],
-     answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.jpg"],
+     answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.webp"],
      explanation: "Eggs with legs, which then gets shortened to EWL"
-     /*Implement clicking on images to answer*/
 },
     {question: "Why are spiders so important to our way of life?", 
      answers: ["They kill millions of mosquitoes and similar insects each year, which helps slow the spread of diseases", "They help protect crops against insects that want to eat them", "Their webs have many scientific applications", "Their cute little faces brighten our days", "All of the above" ],
@@ -43,23 +43,29 @@ let questions = [
 }
 ]
 
+//Selects a random question from the array
 let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
+//Populates question and clears previous answers and explanation
 questionHeader.innerText = randomQuestion.question;
 answerButtons.innerHTML = '';
 explanationText.innerText = '';
 
+//Populates answer buttons, if there are images for answers populates with images too
 if (randomQuestion.answerImages) {
     randomQuestion.answerImages.forEach((imageSrc, index) => {
         const button = document.createElement("button");
         const img = document.createElement("img");
+        const answerText = document.createElement("span");
         img.src = imageSrc;
         img.alt = randomQuestion.answers[index];
         img.classList.add("answer-image");
         button.appendChild(img);
-        button.classList.add("answer-button");
+        button.classList.add("image-button");
         answerButtons.appendChild(button);
-        console.log('loaded question with images');
+        answerText.textContent = randomQuestion.answers[index];
+        button.appendChild(answerText);
+        button.classList.add("image-button")
     });
 } else {
 randomQuestion.answers.forEach(answer => {
@@ -67,7 +73,6 @@ randomQuestion.answers.forEach(answer => {
     button.textContent = answer;
     button.classList.add("answer-button")
     answerButtons.appendChild(button); 
-    console.log('loaded question');
 })
 }
 
