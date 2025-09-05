@@ -81,3 +81,10 @@ randomQuestion.answers.forEach(answer => {
 button.addEventListener("click", () => {
         explanationText.innerText = randomQuestion.explanation;
     });*/
+
+//Next question button reloads the page and gets a new random question
+const nextButton = document.getElementById("nextButton");
+nextButton.addEventListener("click", () => {
+    location.reload();
+    
+});
