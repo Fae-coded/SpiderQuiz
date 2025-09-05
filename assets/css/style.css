@@ -69,13 +69,49 @@ button:hover {
     color: #282B28;
     font-size: 38px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    display: inline-block;
+    display: flex;
     justify-content: center;
+    align-items: center;
     margin: 20px 20px;
     padding: 10px 25px;
     border-radius: 30px;
     width: 25%;
     /*buttons need centring on page*/
+}
+
+.answer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    width: 468px;
+    height:300px;
+    object-fit: cover;
+}
+
+.image-button {
+    background-color: #B5D6B2;
+    color: #282B28;
+    font-size: 38px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+    padding: 0px 0px 5px;
+    border-radius: 30px;
+    width: 25%;
+}
+
+.nextButton {
+    background-color: #B5D6B2;
+    color: #282B28;
+    font-size: 38px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    text-align: center;
+    display: block;
+    padding: 10px 45px;
+    border-radius: 30px;
 }
 
 #sapphire {
