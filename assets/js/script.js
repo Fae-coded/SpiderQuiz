@@ -10,7 +10,7 @@ let questions = [
     answers: ["Crab Spider", "Pelican Spider", "Camel Spider", "Mouse Spider"],
     answerImages: ["./assets/images/crab-spider.jpeg", "./assets/images/pelican-spider.jpg", "./assets/images/camel-spider.jpg", "./assets/images/mouse-spider.jpg"],
     correctAnswer: "Camel Spider",
-    explanation: "A camel spider is an arachnid but isn’t actually a spider!"
+    explanation: "A camel spider is an arachnid but isn’t actually a spider! They lack the ability to produce silk and venom, which are two defining characteristics of spiders."
 },
     {question:"How do spiders move their legs?",
     answers: ["Purely muscles", "Muscles and hydraulics", "Pneumatics and muscles", "The power of God and anime"],
@@ -26,23 +26,23 @@ let questions = [
     {question: "There is a herbivorous species of spider.", 
     answers: ["True", "False"],
     correctAnswer: "True",
-    explanation: "True! The species Bagheera kiplingi feeds primarily on the ‘beltian bodies’ (little nubs at the end of leaves) of Mimosoideae trees. It’s incorrect to call them exclusively vegetarian though, even though these nubs make up over 90% of their food, they will occasionally eat ant larvae."
+    explanation: "The species Bagheera kiplingi feeds primarily on the ‘beltian bodies’ (little nubs at the end of leaves) of Mimosoideae trees. It’s incorrect to call them exclusively vegetarian, even though these nubs make up over 90% of their food, they will occasionally eat ant larvae."
 },
     {question: "How many body segments do spiders have?", 
     answers: ["1", "2", "3", "4"],
     correctAnswer: "2",
-    explanation: "The body of a spider has 2 segments, the abdomen and the cephalothorax"
+    explanation: "The segments of a spider's body are the abdomen and the cephalothorax"
 },
     {question: "In the spider breeding hobby, what does the first stage of development colloquially get called?", 
      answers: ["Peas with Knees", "Pies with Eyes", "Eggs with Legs", "Keith with Teeth"],
      answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.webp"],
      correctAnswer: "Eggs with Legs",
-     explanation: "Eggs with legs, which then gets shortened to EWL"
+     explanation: "This gets shortened to EWL"
 },
     {question: "Why are spiders so important to our way of life?", 
      answers: ["They kill millions of mosquitoes and similar insects each year, which helps slow the spread of diseases", "They help protect crops against insects that want to eat them", "Their webs have many scientific applications", "Their cute little faces brighten our days", "All of the above" ],
      correctAnswer: "All of the above",
-     explanation: "All of the above!"
+     explanation: "Spiders contribute quite a lot to our ecosystem and way of life!"
 },
     {question: "Arguably one of the most venomous spiders in the world, the six eyed sand spider (Sicarius thomisoides) is responsible for how many deaths in the last 10 years?", 
     answers: ["0", "356", "33", "10,048"],
@@ -89,19 +89,23 @@ const buttons = document.querySelectorAll(".answer-button, .image-button");
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         if (button.textContent === randomQuestion.correctAnswer) {
+            explanationText.classList.add("explanation-text-toggle")
             explanationText.innerText = "Correct! " + randomQuestion.explanation;
             buttons.forEach(btn => btn.disabled = true);
             //Add increment score functionality here
         } else {
+            explanationText.classList.add("explanation-text-toggle")
             explanationText.innerText = "Incorrect! The correct answer is: " + randomQuestion.correctAnswer + ". " + randomQuestion.explanation;
             buttons.forEach(btn => btn.disabled = true);
         }
     })
     });
 
-//Next question button loads a new random question after the previous question is answered
+//Next question button loads a new random question after the current question is answered
 const nextButton = document.getElementById("nextButton");
 nextButton.addEventListener("click", () => {
     location.reload();
+
     //Add to functionality to not repeat the same question and go to results page once all questions are answered.
+    //Next button only appears after answering the question
 });
