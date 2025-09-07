@@ -82,16 +82,26 @@ randomQuestion.answers.forEach(answer => {
     button.classList.add("answer-button")
     answerButtons.appendChild(button); 
 })
-}
+};
 
-/* when answer button is clicked shows explanation. Implement checking if answer is correct first
+//When an answer button is clicked, shows if correct or not and the explanation. Disables answer buttons after one is clicked.
+const buttons = document.querySelectorAll(".answer-button, .image-button");
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (button.textContent === randomQuestion.correctAnswer) {
+            explanationText.innerText = "Correct! " + randomQuestion.explanation;
+            buttons.forEach(btn => btn.disabled = true);
+            //Add increment score functionality here
+        } else {
+            explanationText.innerText = "Incorrect! The correct answer is: " + randomQuestion.correctAnswer + ". " + randomQuestion.explanation;
+            buttons.forEach(btn => btn.disabled = true);
+        }
+    })
+    });
 
-button.addEventListener("click", () => {
-        explanationText.innerText = randomQuestion.explanation;
-    });*/
-
-//Next question button reloads the page and gets a new random question
+//Next question button loads a new random question after the previous question is answered
 const nextButton = document.getElementById("nextButton");
 nextButton.addEventListener("click", () => {
     location.reload();
+    //Add to functionality to not repeat the same question and go to results page once all questions are answered.
 });
