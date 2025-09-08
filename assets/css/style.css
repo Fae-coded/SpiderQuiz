@@ -102,7 +102,7 @@ button:hover {
     width: 25%;
 }
 
-#nextButton {
+#nextButton #restart {
     background-color: #B5D6B2;
     color: #282B28;
     font-size: 38px;
