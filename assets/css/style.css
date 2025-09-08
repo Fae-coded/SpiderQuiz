@@ -45,9 +45,13 @@ hr {
     width: 80%;
 }
 
+a {
+    text-decoration: none;
+}
 button {
     background-color: #B5D6B2;
     color: #282B28;
+    text-decoration: none;
     font-size: 38px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
