@@ -48,17 +48,15 @@ hr {
 a {
     text-decoration: none;
 }
-button {
-    background-color: #B5D6B2;
-    color: #282B28;
-    text-decoration: none;
-    font-size: 38px;
-    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    padding: 10px 45px;
-    border-radius: 30px;
+
+
+
+#answerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
 }
 
 /*add hover effect to button?
@@ -72,22 +70,15 @@ button:hover {
     color: #282B28;
     font-size: 38px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 20px 20px;
     padding: 10px 25px;
     border-radius: 30px;
     width: 25%;
-    /*buttons need centring on page*/
 }
 
 .answer-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 30px;
-    width: 468px;
+    width: 460px;
     height:300px;
     object-fit: cover;
 }
@@ -106,14 +97,15 @@ button:hover {
     width: 25%;
 }
 
-#nextButton #restart {
+#start, #next-button, #restart  {
     background-color: #B5D6B2;
     color: #282B28;
     font-size: 38px;
     font-weight: bold;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    text-align: center;
     display: block;
+    text-align: center;
+    margin: 10px auto;
     padding: 10px 45px;
     border-radius: 30px;
 }
@@ -124,7 +116,7 @@ button:hover {
     font-size: 38px;
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
-    margin: 10px 10px;
+    margin: 20px 100px;
     padding: 5px 5px;
     border-radius: 30px;
     
