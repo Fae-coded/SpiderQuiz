@@ -1,7 +1,8 @@
-//Populates a random question and answers on page load
+//Get references to HTML elements
 const questionHeader = document.getElementById("questionHeader");
 const answerButtons = document.getElementById("answerButtons");
 const explanationText = document.getElementById("explanationText");
+let score = 0;
 
 
 //Array of question objects
@@ -49,63 +50,94 @@ let questions = [
     correctAnswer: "0",
     explanation: "There are no recorded instances of this spider biting people. They are incredibly reluctant to bite anything that is not their prey and instead rely on their incredible camouflage of covering themselves with sand."
 }
-]
+];
 
-//Selects a random question from the array
-let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+//Function selects a random question from the array and then removes it from the array so it can't be repeated
+let getRandomQuestion = () => {
+    const randomIndex = Math.floor(Math.random() * questions.length)
+    const selectedQuestion = questions[randomIndex];
+    questions.splice(randomIndex, 1);
+    console.log("random question function Test", randomIndex)
+    return selectedQuestion;
+};
+
+let currentQuestion = getRandomQuestion();
 
 //Populates question and clears previous answers and explanation
-questionHeader.innerText = randomQuestion.question;
+questionHeader.innerText = currentQuestion.question;
 answerButtons.innerHTML = '';
 explanationText.innerText = '';
 
-//Populates answer buttons, if there are images for answers populates with images too
-if (randomQuestion.answerImages) {
-    randomQuestion.answerImages.forEach((imageSrc, index) => {
-        const button = document.createElement("button");
-        const img = document.createElement("img");
-        const answerText = document.createElement("span");
-        img.src = imageSrc;
-        img.alt = randomQuestion.answers[index];
-        img.classList.add("answer-image");
-        button.appendChild(img);
-        button.classList.add("image-button");
-        answerButtons.appendChild(button);
-        answerText.textContent = randomQuestion.answers[index];
-        button.appendChild(answerText);
-        button.classList.add("image-button")
-    });
-} else {
-randomQuestion.answers.forEach(answer => {
-    const button = document.createElement("button");
-    button.textContent = answer;
-    button.classList.add("answer-button")
-    answerButtons.appendChild(button); 
-})
+//Function populates answer buttons, including images if they exist for that question
+let createAnswerButtons = (question, container) => {
+    container.innerHTML = '';
+    if (question.answerImages) {
+        question.answerImages.forEach((imageSrc, index) => {
+            const button = document.createElement("button");
+            const img = document.createElement("img");
+            const answerText = document.createElement("span");
+
+            img.src = imageSrc;
+            img.alt = question.answers[index];
+            img.classList.add("answer-image");
+
+            button.appendChild(img);
+            button.appendChild(answerText);
+            answerText.textContent = question.answers[index];
+            button.classList.add("image-button")
+
+            container.appendChild(button);
+        });
+    } else {
+        currentQuestion.answers.forEach(answer => {
+            const button = document.createElement("button");
+            button.textContent = answer;
+            button.classList.add("answer-button")
+            answerButtons.appendChild(button); 
+        })
+    }
 };
 
+createAnswerButtons(currentQuestion, answerButtons);
+
 //When an answer button is clicked, shows if correct or not and the explanation. Disables answer buttons after one is clicked.
-const buttons = document.querySelectorAll(".answer-button, .image-button");
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        if (button.textContent === randomQuestion.correctAnswer) {
-            explanationText.classList.add("explanation-text-toggle")
-            explanationText.innerText = "Correct! " + randomQuestion.explanation;
-            buttons.forEach(btn => btn.disabled = true);
-            //Add increment score functionality here
-        } else {
-            explanationText.classList.add("explanation-text-toggle")
-            explanationText.innerText = "Incorrect! The correct answer is: " + randomQuestion.correctAnswer + ". " + randomQuestion.explanation;
-            buttons.forEach(btn => btn.disabled = true);
-        }
-    })
-    });
+let buttons = document.querySelectorAll(".answer-button, .image-button");
+    let checkAnswers = () =>  {
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                if (button.textContent === currentQuestion.correctAnswer) {
+                    explanationText.classList.add("explanation-text-toggle")
+                    explanationText.innerText = "Correct! " + currentQuestion.explanation;
+                    score++;
+                    // buttons.forEach(btn => btn.disabled = true);
+                } else {
+                    explanationText.classList.add("explanation-text-toggle")
+                    explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation;
+                    // buttons.forEach(btn => btn.disabled = true);
+                }
+                /*nextButton.classList.add("next-button-toggle")*/
+                })
+            })};
+ checkAnswers();           
 
 //Next question button loads a new random question after the current question is answered
-const nextButton = document.getElementById("nextButton");
+const nextButton = document.getElementById("next-button");
 nextButton.addEventListener("click", () => {
-    location.reload();
+    currentQuestion = getRandomQuestion();
+    console.log("Current Question:", currentQuestion)
+    createAnswerButtons(currentQuestion, answerButtons);
+    questionHeader.innerText = currentQuestion.question;
+    explanationText.innerText = '';
+    explanationText.classList.remove("explanation-text-toggle")
+    nextButton.classList.remove("next-button-toggle")
+    buttons = document.querySelectorAll(".answer-button, .image-button");
+    checkAnswers();
+    // buttons.forEach(btn => btn.disabled = false);
+    
 
-    //Add to functionality to not repeat the same question and go to results page once all questions are answered.
+    //Add to functionality to go to results page once all questions are answered.
     //Next button only appears after answering the question
-});
+        });
+
+// let finalScore = document.getElementById("finalScore");
+// finalScore.innerText = score + " / 8";
