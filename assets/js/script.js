@@ -4,7 +4,6 @@ const answerButtons = document.getElementById("answerButtons");
 const explanationText = document.getElementById("explanationText");
 let score = 0;
 
-
 //Array of question objects
 let questions = [
     {question:"Which of these is NOT a type of spider?", 
@@ -129,7 +128,6 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
 const nextButton = document.getElementById("next-button");
 nextButton.addEventListener("click", () => {
     currentQuestion = getRandomQuestion();
-    console.log("Current Question:", currentQuestion)
     createAnswerButtons(currentQuestion, answerButtons);
     questionHeader.innerText = currentQuestion.question;
     explanationText.innerText = '';
@@ -137,12 +135,7 @@ nextButton.addEventListener("click", () => {
     nextButton.classList.remove("next-button-toggle")
     buttons = document.querySelectorAll(".answer-button, .image-button");
     checkAnswers();
-    // buttons.forEach(btn => btn.disabled = false);
-    
 
-    //Add to functionality to go to results page once all questions are answered.
+    // buttons.forEach(btn => btn.disabled = false);
     //Next button only appears after answering the question
         });
-
-// let finalScore = document.getElementById("finalScore");
-// finalScore.innerText = score + " / 8";
