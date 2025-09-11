@@ -56,9 +56,13 @@ let questions = [
 let getRandomQuestion = () => {
     const randomIndex = Math.floor(Math.random() * questions.length)
     const selectedQuestion = questions[randomIndex];
-    questions.splice(randomIndex, 1);
-    console.log("random question function Test", randomIndex)
-    return selectedQuestion;
+    if (questions.length > 0) {
+        questions.splice(randomIndex, 1);
+        return selectedQuestion;       
+    } else {
+        // Redirects to results page when all questions have been answered
+        window.location.href = "results.html?score=" + score;
+    }  
 };
 
 let currentQuestion = getRandomQuestion();
@@ -100,7 +104,7 @@ let createAnswerButtons = (question, container) => {
 
 createAnswerButtons(currentQuestion, answerButtons);
 
-//When an answer button is clicked, shows if correct or not and the explanation. Disables answer buttons after one is clicked.
+//Function checks if answer button clicked is correct or not, and provides the explanation. Disables answer buttons after one is clicked.
 let buttons = document.querySelectorAll(".answer-button, .image-button");
     let checkAnswers = () =>  {
         buttons.forEach(button => {
@@ -109,15 +113,16 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
                     explanationText.classList.add("explanation-text-toggle")
                     explanationText.innerText = "Correct! " + currentQuestion.explanation;
                     score++;
-                    // buttons.forEach(btn => btn.disabled = true);
                 } else {
                     explanationText.classList.add("explanation-text-toggle")
-                    explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation;
-                    // buttons.forEach(btn => btn.disabled = true);
+                    explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation; 
                 }
                 /*nextButton.classList.add("next-button-toggle")*/
+                removeEventListener("click", checkAnswers);
+                buttons.forEach(btn => btn.disabled = true);
                 })
             })};
+
  checkAnswers();           
 
 //Next question button loads a new random question after the current question is answered
