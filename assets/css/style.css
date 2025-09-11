@@ -128,3 +128,12 @@ button:hover {
     margin: 0 auto;    
     border-radius: 30px;
 }
+
+#finalScore {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    text-align: center;
+    margin: 15px auto;
+}
