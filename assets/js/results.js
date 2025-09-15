@@ -3,4 +3,4 @@ let finalScore = document.getElementById("finalScore");
 //Parse score from URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 const scoreParam = urlParams.get('score');
-finalScore.innerHTML = scoreParam + " / 8";
+finalScore.textContent = scoreParam + " / 8";
