@@ -49,8 +49,6 @@ a {
     text-decoration: none;
 }
 
-
-
 #answerButtons {
     display: flex;
     flex-wrap: wrap;
@@ -59,10 +57,9 @@ a {
     margin: 20px 20px;
 }
 
-/*add hover effect to button?
-button:hover {
-    background-color: ;
-
+/*button:hover {
+    background-color: hsl (115, 31%, 30%);
+    cursor: pointer;
 }*/
 
 .answer-button {
@@ -97,7 +94,7 @@ button:hover {
     width: 25%;
 }
 
-#start, #next-button, #restart  {
+.function-buttons {
     background-color: #B5D6B2;
     color: #282B28;
     font-size: 38px;
@@ -118,8 +115,7 @@ button:hover {
     text-align: center;
     margin: 20px 100px;
     padding: 5px 5px;
-    border-radius: 30px;
-    
+    border-radius: 30px; 
 }
 
 #sapphire {
