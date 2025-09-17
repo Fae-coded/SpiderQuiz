@@ -61,7 +61,8 @@ let getRandomQuestion = () => {
     } else {
         // Redirects to results page when all questions have been answered
         window.location.href = "results.html?score=" + score;
-    }  
+    }
+      
 };
 
 let currentQuestion = getRandomQuestion();
@@ -103,6 +104,10 @@ let createAnswerButtons = (question, container) => {
 
 createAnswerButtons(currentQuestion, answerButtons);
 
+//Disables next question button until an answer is selected
+const nextButton = document.getElementById("next-button");
+nextButton.disabled = true;
+
 //Function checks if answer button clicked is correct or not, and provides the explanation. Disables answer buttons after one is clicked.
 let buttons = document.querySelectorAll(".answer-button, .image-button");
     let checkAnswers = () =>  {
@@ -116,16 +121,16 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
                     explanationText.classList.add("explanation-text-toggle")
                     explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation; 
                 }
-                /*nextButton.classList.add("next-button-toggle")*/
+                //Disables answer buttons and enables next question button after an answer is selected
                 removeEventListener("click", checkAnswers);
                 buttons.forEach(btn => btn.disabled = true);
+                nextButton.disabled = false;
                 })
             })};
 
  checkAnswers();           
 
-//Next question button loads a new random question after the current question is answered
-const nextButton = document.getElementById("next-button");
+//Next question button loads a new random question and disables itself again.
 nextButton.addEventListener("click", () => {
     currentQuestion = getRandomQuestion();
     createAnswerButtons(currentQuestion, answerButtons);
@@ -135,7 +140,5 @@ nextButton.addEventListener("click", () => {
     nextButton.classList.remove("next-button-toggle")
     buttons = document.querySelectorAll(".answer-button, .image-button");
     checkAnswers();
-
-    // buttons.forEach(btn => btn.disabled = false);
-    //Next button only appears after answering the question
-        });
+    nextButton.disabled = true;
+    });
