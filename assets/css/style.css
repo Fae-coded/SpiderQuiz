@@ -58,7 +58,7 @@ a {
 }
 
 button:hover {
-    background-color: hsl(115, 31%, 50%);
+    background-color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -119,7 +119,11 @@ button:hover {
 }
 
 #correct-answer-highlight {
-    background-color: #FFFFFF;
+    background-color: hsl(115, 31%, 50%);
+}
+
+#incorrect-answer-highlight {
+    background-color:#EF6461;
 }
 
 #sapphire {

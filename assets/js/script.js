@@ -116,10 +116,12 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
                     explanationText.classList.add("explanation-text-toggle")
                     explanationText.innerText = "Correct! " + currentQuestion.explanation;
                     score++;
+                    button.setAttribute('id', "correct-answer-highlight")
                 } else {
                     explanationText.classList.add("explanation-text-toggle")
                     explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation;
                     //Highlights the correct answer button and the incorrectly selected button
+                    button.setAttribute("id", "incorrect-answer-highlight");
                     buttons.forEach(btn => {
                         if (btn.textContent === currentQuestion.correctAnswer) {
                             btn.setAttribute('id', "correct-answer-highlight");
