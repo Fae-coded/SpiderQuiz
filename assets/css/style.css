@@ -57,10 +57,10 @@ a {
     margin: 20px 20px;
 }
 
-/*button:hover {
-    background-color: hsl (115, 31%, 30%);
+button:hover {
+    background-color: hsl(115, 31%, 50%);
     cursor: pointer;
-}*/
+}
 
 .answer-button {
     background-color: #B5D6B2;
@@ -116,6 +116,10 @@ a {
     margin: 20px 100px;
     padding: 5px 5px;
     border-radius: 30px; 
+}
+
+#correct-answer-highlight {
+    background-color: #FFFFFF;
 }
 
 #sapphire {

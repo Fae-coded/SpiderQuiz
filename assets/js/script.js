@@ -118,8 +118,14 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
                     score++;
                 } else {
                     explanationText.classList.add("explanation-text-toggle")
-                    explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation; 
-                }
+                    explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation;
+                    //Highlights the correct answer button and the incorrectly selected button
+                    buttons.forEach(btn => {
+                        if (btn.textContent === currentQuestion.correctAnswer) {
+                            btn.setAttribute('id', "correct-answer-highlight");
+                        }
+                    })
+                };
                 //Disables answer buttons and enables next question button after an answer is selected
                 removeEventListener("click", checkAnswers);
                 buttons.forEach(btn => btn.disabled = true);
