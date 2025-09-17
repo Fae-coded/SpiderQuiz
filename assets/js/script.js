@@ -61,8 +61,7 @@ let getRandomQuestion = () => {
     } else {
         // Redirects to results page when all questions have been answered
         window.location.href = "results.html?score=" + score;
-    }
-      
+    }   
 };
 
 let currentQuestion = getRandomQuestion();
@@ -137,7 +136,6 @@ nextButton.addEventListener("click", () => {
     questionHeader.innerText = currentQuestion.question;
     explanationText.innerText = '';
     explanationText.classList.remove("explanation-text-toggle")
-    nextButton.classList.remove("next-button-toggle")
     buttons = document.querySelectorAll(".answer-button, .image-button");
     checkAnswers();
     nextButton.disabled = true;
