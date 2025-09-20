@@ -49,14 +49,6 @@ a {
     text-decoration: none;
 }
 
-#answerButtons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 20px;
-}
-
 button:hover {
     background-color: #FFFFFF;
     cursor: pointer;
@@ -75,8 +67,9 @@ button:hover {
 
 .answer-image {
     border-radius: 30px;
-    width: 460px;
-    height:300px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -89,9 +82,8 @@ button:hover {
     justify-content: center;
     align-items: center;
     margin: 20px 20px;
-    padding: 0px 0px 5px;
+    padding: 0px 0px;
     border-radius: 30px;
-    width: 25%;
 }
 
 .function-buttons {
@@ -118,6 +110,14 @@ button:hover {
     border-radius: 30px; 
 }
 
+#answerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+}
+
 #correct-answer-highlight {
     background-color: hsl(115, 31%, 50%);
 }
@@ -140,4 +140,188 @@ button:hover {
     font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     text-align: center;
     margin: 15px auto;
+}
+
+@media only screen and (max-width: 600px) {
+      #sapphire {
+    width: 60%;
+    }
+
+    .answer-button, .image-button {
+        font-size: 24px;
+        width: 80%;
+        margin: 10px 0;
+        padding-bottom: 5px;
+    }
+
+    .answer-image {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+
+    .function-buttons {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    .explanation-text-toggle {
+        font-size: 24px;
+        margin: 10px 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, li {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #sapphire {
+    width: 60%;
+    }
+
+    .answer-button, .image-button {
+        font-size: 32px;
+        width: 80%;
+        margin: 10px 15px;
+        padding-bottom: 5px;
+    }
+
+    .answer-image {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+
+    .function-buttons {
+        font-size: 32px;
+        padding: 12px 40px;
+    }
+
+    .explanation-text-toggle {
+        font-size: 32px;
+        margin: 25px 75px;
+    }
+
+    h1 {
+        font-size:  44px;
+        margin-top: 5px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p, li {
+        font-size: 20px;
+        line-height: 2.2;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #sapphire {
+    width: 50%;
+    }
+
+    .answer-button, .image-button {
+        font-size: 34px;
+        width: 40%;
+        aspect-ratio: 2 / 1;
+        margin: 15px 15px;
+        padding-bottom: 10px;
+    }
+
+    .answer-image {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .answer-button, .image-button {
+        font-size: 36px;
+        width: 30%;
+        aspect-ratio: 2 / 1;
+        margin: 28px 28px;
+        padding-bottom: 10px;
+    }
+
+    .answer-image {
+        width: 100%;
+        aspect-ratio: 1/ 1;
+    }
+
+    .function-buttons {
+        font-size: 36px;
+        padding: 13px 50px;
+    }
+
+    .explanation-text-toggle {
+        font-size: 36px;
+        margin: 28px 100px;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-top: 5px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    p, li {
+        font-size: 22px;
+        line-height: 2.3;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #sapphire {
+    width: 30%;
+    }
+
+    .answer-button, .image-button {
+        font-size: 36px;
+        width: 20%;
+        aspect-ratio: 2 / 1;
+        padding-bottom: 10px;
+    }
+
+    .answer-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .function-buttons {
+        font-size: 42px;
+        padding: 15px 60px;
+    }
+
+    .explanation-text-toggle {
+        font-size: 42px;
+        margin: 30px 150px;
+    }
+
+    h1 {
+        font-size: 56px;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p, li {
+        font-size: 24px;
+        line-height: 2.5;
+    }
 }

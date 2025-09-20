@@ -8,7 +8,7 @@ let score = 0;
 let questions = [
     {question:"Which of these is NOT a type of spider?", 
     answers: ["Crab Spider", "Pelican Spider", "Camel Spider", "Mouse Spider"],
-    answerImages: ["./assets/images/crab-spider.jpeg", "./assets/images/pelican-spider.jpg", "./assets/images/camel-spider.jpg", "./assets/images/mouse-spider.jpg"],
+    answerImages: ["./assets/images/crab-spider.webp", "./assets/images/pelican-spider.webp", "./assets/images/camel-spider.webp", "./assets/images/mouse-spider.webp"],
     correctAnswer: "Camel Spider",
     explanation: "A camel spider is an arachnid but isn’t actually a spider! They lack the ability to produce silk and venom, which are two defining characteristics of spiders."
 },
@@ -19,7 +19,7 @@ let questions = [
 },
     {question: "What types of spiders live the longest?", 
     answers: ["Tarantulas", "Jumping Spiders", "Orb Weavers", "All of them live similar livespans"],
-    answerImages: ["./assets/images/tarantula.jpg", "./assets/images/jumping-spider.jpg", "./assets/images/orb-weaver.jpg", "./assets/images/birupes.jpg"],
+    answerImages: ["./assets/images/tarantula.webp", "./assets/images/jumping-spider.webp", "./assets/images/orb-weaver.webp", "./assets/images/birupes.webp"],
     correctAnswer: "Tarantulas",
     explanation: "Some tarantula species can live up to 40 years, whereas most other types of spiders live only 2-3 years."
 },
@@ -35,7 +35,7 @@ let questions = [
 },
     {question: "In the spider breeding hobby, what does the first stage of development colloquially get called?", 
      answers: ["Peas with Knees", "Pies with Eyes", "Eggs with Legs", "Keith with Teeth"],
-     answerImages: ["./assets/images/peas.webp", "./assets/images/pies.jpg", "./assets/images/eggs.jpg", "./assets/images/keith.webp"],
+     answerImages: ["./assets/images/peas.webp", "./assets/images/pies.webp", "./assets/images/eggs.webp", "./assets/images/keith.webp"],
      correctAnswer: "Eggs with Legs",
      explanation: "This gets shortened to EWL"
 },
