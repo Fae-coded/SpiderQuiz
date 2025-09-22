@@ -15,7 +15,7 @@ The website has three pages with several features:
 - The first page shows how to take the quiz and the rules. At the top of the page, the name of the quiz (Spider Quiz) can be seen in large text and below it in smaller text apologies to archnaphobes.
 - When clicked a Start button centered at the bottom of the page will start the quiz.
 
-![pic of start page](link here)
+![start page](.\assets\images\startpage.webp)
 
 - On the second page, the first question is randomly selected and populated from the list of questions available.
 - All questions are cycled through at random.
@@ -39,7 +39,7 @@ The website has three pages with several features:
 
 ![results page](.\assets\images\results.webp)
 
--responsive on laptop screen sizes and larger and tablet screen sizes and smaller. Text and images enlarge and shrink accordingly.
+- Responsive on laptop screen sizes and larger, text and images scale up. Responsive on tablet and mobile screen sizes, text and images shrink down.
 
 ## Future Enhancements
 
