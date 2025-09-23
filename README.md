@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This README file provides information about the Spider Quiz website, its purpose, and how to get started. The quiz allows visitors to test and grow their knowledge of spiders with 8 questions and accompanying explanations. The questions are randomised throughout the quiz.
+This README file provides information about the Spider Quiz website, its purpose, and how to get started. The quiz allows visitors to test and grow their knowledge of spiders with 8 questions and accompanying explanations. The questions are randomised throughout the quiz and provides education on spiders to its users.
 
 Please click this [link](site link here) to access the website.
 
@@ -15,29 +15,29 @@ The website has three pages with several features:
 - The first page shows how to take the quiz and the rules. At the top of the page, the name of the quiz (Spider Quiz) can be seen in large text and below it in smaller text apologies to archnaphobes.
 - When clicked a Start button centered at the bottom of the page will start the quiz.
 
-![start page](.\assets\images\startpage.webp)
+![start page](./assets/images/startpage.webp)
 
 - On the second page, the first question is randomly selected and populated from the list of questions available.
 - All questions are cycled through at random.
 - All buttons offer the user feedback with on-hover animations and pointers.
 
-![questions page](.\assets\images\question.webp)
+![questions page](./assets/images/question.webp)
 
 - A correct answer will highlight the button green and an explanation for the answer appears between the answers and next buttons.
 
-![correct answer](.\assets\images\correctquestion.webp)
+![correct answer](./assets/images/correctquestion.webp)
 
 - An incorrect answer will highlight the selected answer red.
 - The correct answer is highlighted in green at the same time and the explanation for the correct answer is provided.
 
-![incorrect answer](.\assets\images\incorrectquestion.webp)
+![incorrect answer](./assets/images/incorrectquestion.webp)
 
 - Afterwards the answer buttons are disabled and the next button will activate so the user can move to the next question.
 - Once all questions are answered the next button will redirect the user to the results page.
 - The final page shows the users their total score for the quiz.
 - A Retry Quiz button allows the user to reset the quiz and navigate back to the start page.
 
-![results page](.\assets\images\results.webp)
+![results page](./assets/images/results.webp)
 
 - Responsive on laptop screen sizes and larger, text and images scale up. Responsive on tablet and mobile screen sizes, text and images shrink down.
 
@@ -61,7 +61,32 @@ The website has three pages with several features:
 
 ## Testing
 
-All the code validation and lighthouse and browser testing?
+The initial html test for index.html revealed an error with the button element nested inside the anchor element. I fixed this error by removing the anchor element and adding an onClick attribute to the button directing to questions.html.
+
+![initial index test](./assets/images/index-error-test.jpg)
+
+The initial html test for questions.html showed an error due to mistaken use of backslashes in the script path and a warning for the h1 element with id questionHeader being empty. I corrected the backslashes to forward slashes in the path and added placeholder text "Loading question..." to the h1 element.
+
+![initial questions test](./assets/images/questions-error-test.jpg)
+
+Before testing results.html I noticed the similar issues found in questions.html and index.html were present, therefore I corrected backslashes in the script path and amend the button element to have an onClick attribute instead of using an anchor element. Once these corrections were made to results.html I ran an initial test which returned no errors or warnings.
+
+All HTML files have now passsed HTML validity checks with W3C.
+
+- index.html file test:
+  ![index.html test](./assets/images/index-html-test.jpg)
+
+- questions.html file test:
+  ![questions.html test](./assets/images/questions-html-test.jpg)
+
+- results.html file test:
+  ![results.html test](./assets/images/results-html-test.jpg)
+
+The CSS file has passed CSS validity check with W3c too.
+
+![css test]()
+
+JS test https://javascriptvalidator.net/
 
 ## Deployment?
 
