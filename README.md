@@ -69,7 +69,7 @@ The initial html test for questions.html showed an error due to mistaken use of 
 
 ![initial questions test](./assets/images/questions-error-test.jpg)
 
-Before testing results.html I noticed the similar issues found in questions.html and index.html were present, therefore I corrected backslashes in the script path and amend the button element to have an onClick attribute instead of using an anchor element. Once these corrections were made to results.html I ran an initial test which returned no errors or warnings.
+Before testing results.html I noticed similar issues found in questions.html and index.html were present, therefore I corrected backslashes in the script path and amended the button element to have an onClick attribute, instead of using an anchor element. Once these corrections were made to results.html I ran an initial test which returned no errors or warnings.
 
 All HTML files have now passsed HTML validity checks with W3C.
 
@@ -82,15 +82,17 @@ All HTML files have now passsed HTML validity checks with W3C.
 - results.html file test:
   ![results.html test](./assets/images/results-html-test.jpg)
 
-The CSS file has passed CSS validity check with W3c too.
+The CSS file has passed CSS validity check with W3C too.
 
-![css test]()
+![css test](./assets/images/css-test.jpg)
 
 JS test https://javascriptvalidator.net/
 
-## Deployment?
+Lighthouse scores
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
+## Deployment
+
+The site was deployed to GitHub pages. The steps to deploy are as follows:
 - In the [GitHub repository](), navigate to the Settings tab
 - From the source section drop-down menu, select the **Main** Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.

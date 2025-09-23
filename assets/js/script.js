@@ -53,7 +53,7 @@ let questions = [
 
 //Function selects a random question from the array and then removes it from the array so it can't be repeated
 let getRandomQuestion = () => {
-    const randomIndex = Math.floor(Math.random() * questions.length)
+    const randomIndex = Math.floor(Math.random() * questions.length);
     const selectedQuestion = questions[randomIndex];
     if (questions.length > 0) {
         questions.splice(randomIndex, 1);
@@ -87,7 +87,7 @@ let createAnswerButtons = (question, container) => {
             button.appendChild(img);
             button.appendChild(answerText);
             answerText.textContent = question.answers[index];
-            button.classList.add("image-button")
+            button.classList.add("image-button");
 
             container.appendChild(button);
         });
@@ -95,9 +95,9 @@ let createAnswerButtons = (question, container) => {
         currentQuestion.answers.forEach(answer => {
             const button = document.createElement("button");
             button.textContent = answer;
-            button.classList.add("answer-button")
+            button.classList.add("answer-button");
             answerButtons.appendChild(button); 
-        })
+        });
     }
 };
 
@@ -113,12 +113,12 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
         buttons.forEach(button => {
             button.addEventListener("click", () => {
                 if (button.textContent === currentQuestion.correctAnswer) {
-                    explanationText.classList.add("explanation-text-toggle")
+                    explanationText.classList.add("explanation-text-toggle");
                     explanationText.innerText = "Correct! " + currentQuestion.explanation;
                     score++;
-                    button.setAttribute('id', "correct-answer-highlight")
+                    button.setAttribute('id', "correct-answer-highlight");
                 } else {
-                    explanationText.classList.add("explanation-text-toggle")
+                    explanationText.classList.add("explanation-text-toggle");
                     explanationText.innerText = "Incorrect! The correct answer is: " + currentQuestion.correctAnswer + ". " + currentQuestion.explanation;
                     //Highlights the correct answer button and the incorrectly selected button
                     button.setAttribute("id", "incorrect-answer-highlight");
@@ -126,14 +126,15 @@ let buttons = document.querySelectorAll(".answer-button, .image-button");
                         if (btn.textContent === currentQuestion.correctAnswer) {
                             btn.setAttribute('id', "correct-answer-highlight");
                         }
-                    })
-                };
+                    });
+                }
                 //Disables answer buttons and enables next question button after an answer is selected
                 removeEventListener("click", checkAnswers);
                 buttons.forEach(btn => btn.disabled = true);
                 nextButton.disabled = false;
-                })
-            })};
+                });
+            });
+        };
 
  checkAnswers();           
 
@@ -143,7 +144,7 @@ nextButton.addEventListener("click", () => {
     createAnswerButtons(currentQuestion, answerButtons);
     questionHeader.innerText = currentQuestion.question;
     explanationText.innerText = '';
-    explanationText.classList.remove("explanation-text-toggle")
+    explanationText.classList.remove("explanation-text-toggle");
     buttons = document.querySelectorAll(".answer-button, .image-button");
     checkAnswers();
     nextButton.disabled = true;
