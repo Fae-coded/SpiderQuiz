@@ -81,7 +81,9 @@ let createAnswerButtons = (question, container) => {
             const answerText = document.createElement("span");
 
             img.src = imageSrc;
-            img.alt = question.answers[index];
+            //Alt text removed to avoid duplication with button text for screen readers
+            img.alt = '';
+            img.setAttribute("aria-hidden", "true");
             img.classList.add("answer-image");
 
             button.appendChild(img);
