@@ -1,12 +1,12 @@
 # Spider Quiz
 
-![Pics of the site](link)
+![all screens site](./assets/readimages/all-screens.jpg)
 
 ## Introduction
 
 This README file provides information about the Spider Quiz website, its purpose, and how to get started. The quiz allows visitors to test and grow their knowledge of spiders with 8 questions and accompanying explanations. The questions are randomised throughout the quiz and provides education on spiders to its users.
 
-Please click this [link](https://fae-coded.github.io/SpiderQuiz/questions.html) to access the website.
+Please click this [link](https://fae-coded.github.io/SpiderQuiz/index.html) to access the website.
 
 ## Features
 
